@@ -8,5 +8,5 @@ from blogapp.models import Post
 def post_page(request, slug):
     post = Post.objects.get(slug=slug)
     context = {'post': post}
-    return render(request, 'explorers/post.html', context)
+    return render(request, 'app/post.html', context)
 
