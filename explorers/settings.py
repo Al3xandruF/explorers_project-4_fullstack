@@ -31,7 +31,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['explorers-4th-project-fs-17cd58235910.herokuapp.com', 'localhost']
+# ALLOWED_HOSTS = ['explorers-4th-project-fs-17cd58235910.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu101.gitpod.io']
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu101.gitpod.io']
 
 
 # Application definition
@@ -128,14 +131,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_ROOT = BASE_DIR / 'media'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
