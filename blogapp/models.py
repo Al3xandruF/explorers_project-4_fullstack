@@ -7,7 +7,7 @@ from django.utils.text import slugify
 class Tag(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
-    slug = models.Slugfield(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
