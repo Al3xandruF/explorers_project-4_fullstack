@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
 from blogapp.models import Post
+from blogapp.forms import CommentForm
 
 # Create your views here.
 
@@ -15,6 +15,15 @@ def post_page(request, slug):
     post = Post.objects.get(slug=slug)
     form = CommentForm()
 
+    if request.POST:
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid:
+            comment = comment_form.save(commit=False)
+            postid = request.POST.get['post_id']
+            post = Post.objects.get(id=postid)
+            comment.post = post
+            comment.save()
+
     if post.view_count is None:
         post.view_count = 1
     else:
@@ -22,4 +31,3 @@ def post_page(request, slug):
     post.save()
     context = {'post': post, 'form': form}
     return render(request, 'app/post.html', context)
-
