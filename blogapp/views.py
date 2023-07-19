@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from blogapp.models import Post, Comment
 from blogapp.forms import CommentForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from blogapp.models import Post, Comment
 
 # Create your views here.
 
@@ -24,6 +26,7 @@ def post_page(request, slug):
             post = Post.objects.get(id=postid)
             comment.post = post
             comment.save()
+            return HttpResponseRedirect(reverse('post_page', kwargs={'slug': slug}))
 
     if post.view_count is None:
         post.view_count = 1
