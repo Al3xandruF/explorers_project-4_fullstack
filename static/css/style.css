@@ -228,14 +228,14 @@ header .container {
     align-items: center;
 }
 
-.post-img {
+.post-profile-pic {
     height: 40rem;
     width: 100%;
     overflow: hidden;
     border-radius: 1rem;
 }
 
-.post-img img {
+.post-profile profile {
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -313,7 +313,7 @@ header .container {
     transition: 0.3s;
 }
 
-.post-img {
+.post-.author {
     position: relative;
 }
 
@@ -342,7 +342,7 @@ header .container {
     font-weight: 600;
 }
 
-.card .post-img {
+.card .post-.author {
     width: 100%;
     height: unset;
     aspect-ratio: 1/0.6;

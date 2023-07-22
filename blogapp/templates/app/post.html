@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}explorers | for the curious minds{% endblock title %}
+{% load static %}
 
 {% block content%}
 <body>
@@ -91,7 +92,7 @@
                 <div class="user-comment">
                   <div class="author">
                     <div class="profile-pic">
-                      <img src="../images/author.svg" alt="" />
+                      <img src="{% static 'images/author.svg' %}" alt="" />
                     </div>
                     <div class="details">
                       <p>{{comment.name}}</p>
@@ -136,7 +137,7 @@
                     <div class="public-reply">
                       <div class="author">
                         <div class="profile-pic">
-                          <img src="../images/author.svg" alt="" />
+                          <img src="{% static 'images/author.svg' %}" alt="" />
                         </div>
                         <div class="details">
                           <p>{{reply.name}}</p>
