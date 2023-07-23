@@ -1,5 +1,5 @@
 from django import forms
-from blogapp.models import Comment
+from blogapp.models import Comment, Subscribe
 
 
 class CommentForm(forms.ModelForm):
