@@ -13,7 +13,15 @@ def index(request):
     top_posts = Post.objects.all().order_by('-view_count')[0:3]
     recent_posts = Post.objects.all().order_by('last_updated')[0:3]
     subscribe_form = SubscribeForm()
-    context = {'posts': posts, 'top_posts': top_posts, 'recent_posts': recent_posts, 'subscribe_form': subscribe_form}
+    subscribe_successful = None
+
+    if request.POST:
+        subscribe_form = SubscribeForm(request.POST)
+        if subscribe_form.is_valid():
+            subscribe_form.save()
+            subscribe_successful = 'Subscribed Successfully'
+
+    context = {'posts': posts, 'top_posts': top_posts, 'recent_posts': recent_posts, 'subscribe_form': subscribe_form, 'subscribe successful': subscribe_successful}
     return render(request, 'app/index.html', context)
 
 
