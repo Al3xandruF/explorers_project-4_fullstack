@@ -1104,3 +1104,7 @@ main {
 .reply button {
     background: transparent;
 }
+
+#msgCenter {
+    text-align: center;
+}

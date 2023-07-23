@@ -20,12 +20,13 @@
         </div>
         <div class="newsletter">
           <form method="POST">
-            {% csrf_token %} {{subscribe_form}}
+            {% csrf_token %}
+            {{subscribe_form}}
             <button class="btn btn-primary">Subscribe</button>
           </form>
-          {% if subscribe_succesful %}
-          <br />
-          <p>Subscribe Successfully</p>
+          {% if subscribe_successful %}
+          <br>
+          <p id="msgCenter">Subscribed Successfully!</p>
           {% endif %}
         </div>
       </div>

@@ -20,8 +20,9 @@ def index(request):
         if subscribe_form.is_valid():
             subscribe_form.save()
             subscribe_successful = 'Subscribed Successfully'
+            subscribe_form = SubscribeForm()
 
-    context = {'posts': posts, 'top_posts': top_posts, 'recent_posts': recent_posts, 'subscribe_form': subscribe_form, 'subscribe successful': subscribe_successful}
+    context = {'posts': posts, 'top_posts': top_posts, 'recent_posts': recent_posts, 'subscribe_form': subscribe_form, 'subscribe_successful': subscribe_successful}
     return render(request, 'app/index.html', context)
 
 
