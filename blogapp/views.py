@@ -11,7 +11,7 @@ from blogapp.models import Post, Comment, Subscribe
 def index(request):
     posts = Post.objects.all()
     top_posts = Post.objects.all().order_by('-view_count')[0:3]
-    recent_posts = Post.objects.all().order_by('last_updated')[0:3]
+    recent_posts = Post.objects.all().order_by('-last_updated')[0:3]
     subscribe_form = SubscribeForm()
     subscribe_successful = None
 
