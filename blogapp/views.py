@@ -16,6 +16,9 @@ def index(request):
     subscribe_form = SubscribeForm()
     subscribe_successful = None
 
+    if featured_blog:
+        featured_blog = featured_blog[0]
+
     if request.POST:
         subscribe_form = SubscribeForm(request.POST)
         if subscribe_form.is_valid():
