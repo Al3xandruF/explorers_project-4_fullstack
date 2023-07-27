@@ -72,5 +72,5 @@ def tag_page(request, slug):
     recent_posts = Post.objects.filter(tags__in=[tag.id]).order_by('-last_updated')[0:2]
     tags = Tag.objects.all()
 
-    context = {'tag': tag, 'top_posts': top_posts, 'recent_posts': recent_posts}
+    context = {'tag': tag, 'top_posts': top_posts, 'recent_posts': recent_posts, 'tags': tags}
     return render(request, 'app/tag.html', context)
