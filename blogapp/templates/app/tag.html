@@ -98,35 +98,11 @@
           <!-- right layout -->
           <div class="right">
             <div class="block">
-              <h2 class="title2">Top Tags</h2>
+              <h2 class="title2">More Tags</h2>
               <div class="blog-tags">
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-              </div>
-            </div>
-            <div class="block">
-              <h2 class="title2">Other Tags</h2>
-              <div class="blog-tags">
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
+                {% for tag in tags %}
+                <a href="{% url 'tage_page' tag.slug %}" class="tag">Tag</a>
+                {% endfor %}
               </div>
             </div>
           </div>
