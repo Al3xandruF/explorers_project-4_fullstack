@@ -3,7 +3,7 @@ from blogapp.forms import CommentForm
 from blogapp.forms import SubscribeForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from blogapp.models import Post, Comment, Subscribe
+from blogapp.models import Post, Comment, Subscribe, Tag
 
 # Create your views here.
 
@@ -66,5 +66,6 @@ def post_page(request, slug):
 
 
 def tag_page(request, slug):
-    context = {}
+    tag = Tag.objects.get(slug=slug)
+    context = {'tag': tag}
     return render(request, 'app/tag.html', context)
