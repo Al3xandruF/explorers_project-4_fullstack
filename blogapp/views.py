@@ -83,4 +83,4 @@ def author_page(request, slug):
     recent_posts = Post.objects.filter(author=profile.user).order_by('-last_updated')[0:2]
 
     context = {'profile': profile, 'top_posts': top_posts, 'recent_posts': recent_posts}
-    return render(request, 'blogapp/author.html', context)
+    return render(request, 'app/author.html', context)
