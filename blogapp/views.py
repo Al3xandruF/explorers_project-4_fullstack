@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from blogapp.forms import CommentForm
-from blogapp.forms import SubscribeForm
+from blogapp.forms import CommentForm, SubscribeForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from blogapp.models import Post, Comment, Subscribe, Tag, Profile
+from django.contrib.auth.models import User
+from django.db.models import Count
+
+from blogapp.models import Post, Comment, Tag, Profile
 
 # Create your views here.
 
@@ -81,6 +83,7 @@ def author_page(request, slug):
 
     top_posts = Post.objects.filter(author=profile.user).order_by('-view_count')[0:2]
     recent_posts = Post.objects.filter(author=profile.user).order_by('-last_updated')[0:2]
+    top_authors = User.objects.annotate(number=Count('post')).order_by('number')
 
-    context = {'profile': profile, 'top_posts': top_posts, 'recent_posts': recent_posts}
+    context = {'profile': profile, 'top_posts': top_posts, 'recent_posts': recent_posts, 'top_authors': top_authors}
     return render(request, 'app/author.html', context)
