@@ -196,6 +196,7 @@ header .container {
 .typo {
     width: 50%;
     margin-top: 5rem;
+    text-align: center;
 }
 
 .title {

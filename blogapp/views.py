@@ -3,7 +3,7 @@ from blogapp.forms import CommentForm
 from blogapp.forms import SubscribeForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from blogapp.models import Post, Comment, Subscribe, Tag
+from blogapp.models import Post, Comment, Subscribe, Tag, Profile
 
 # Create your views here.
 
