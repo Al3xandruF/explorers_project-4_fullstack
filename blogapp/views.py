@@ -87,3 +87,8 @@ def author_page(request, slug):
 
     context = {'profile': profile, 'top_posts': top_posts, 'recent_posts': recent_posts, 'top_authors': top_authors}
     return render(request, 'app/author.html', context)
+
+
+def search_post(request):
+    context = {}
+    return render(request, 'app/search.html', context)
