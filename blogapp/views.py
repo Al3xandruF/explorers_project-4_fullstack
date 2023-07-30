@@ -101,3 +101,8 @@ def search_posts(request):
     print('Search : ', search_query)
     context = {'posts': posts, 'search_query': search_query}
     return render(request, 'app/search.html', context)
+
+
+def about(request):
+    context = {}
+    return render(request, 'app/about.html', context)
