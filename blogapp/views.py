@@ -104,5 +104,9 @@ def search_posts(request):
 
 
 def about(request):
-    context = {}
+    website_info = None
+
+    if WebsiteMeta.objects.all().exists():
+        website_info = WebsiteMeta.objects.all()[0]
+    context = {'website_info': website_info}
     return render(request, 'app/about.html', context)
