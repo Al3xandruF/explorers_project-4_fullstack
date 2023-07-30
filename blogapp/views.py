@@ -89,6 +89,6 @@ def author_page(request, slug):
     return render(request, 'app/author.html', context)
 
 
-def search_post(request):
+def search_posts(request):
     context = {}
     return render(request, 'app/search.html', context)
