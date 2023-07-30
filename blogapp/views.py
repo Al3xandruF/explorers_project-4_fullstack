@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.db.models import Count
 
-from blogapp.models import Post, Comment, Tag, Profile
+from blogapp.models import Post, Comment, Tag, Profile, WebsiteMeta
 
 # Create your views here.
 
