@@ -17,6 +17,10 @@ def index(request):
     featured_blog = Post.objects.filter(is_featured=True)
     subscribe_form = SubscribeForm()
     subscribe_successful = None
+    website_info = None
+
+    if WebsiteMeta.objects.all().exists():
+        website_info = WebsiteMeta.objects.all()[0]
 
     if featured_blog:
         featured_blog = featured_blog[0]
@@ -28,7 +32,7 @@ def index(request):
             subscribe_successful = 'Subscribed Successfully'
             subscribe_form = SubscribeForm()
 
-    context = {'posts': posts, 'top_posts': top_posts, 'recent_posts': recent_posts, 'subscribe_form': subscribe_form, 'subscribe_successful': subscribe_successful, 'featured_blog': featured_blog}
+    context = {'posts': posts, 'top_posts': top_posts, 'website_info': website_info ,'recent_posts': recent_posts, 'subscribe_form': subscribe_form, 'subscribe_successful': subscribe_successful, 'featured_blog': featured_blog}
     return render(request, 'app/index.html', context)
 
 
