@@ -1,7 +1,8 @@
 from django import forms
 from blogapp.models import Comment, Subscribe
 from django.utils.translation import gettext_lazy as _
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -25,3 +26,9 @@ class SubscribeForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['email'].widget.attrs['placeholder'] = 'Enter your Email'
+
+
+class NewUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ("username", "email", "password1", "password2")

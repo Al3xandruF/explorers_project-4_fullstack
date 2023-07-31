@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.db.models import Count
+from .forms import NewUserForm
 
 from blogapp.models import Post, Comment, Tag, Profile, WebsiteMeta
 
@@ -114,5 +115,6 @@ def about(request):
 
 
 def register_user(request):
-    context = {}
+    form = NewUserForm()
+    context = {'form': form}
     return render(request, 'registration/registration.html', context)
