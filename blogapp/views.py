@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from blogapp.forms import CommentForm, SubscribeForm
+from django.shortcuts import render, redirect
+from blogapp.forms import CommentForm, SubscribeForm, NewUserForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.db.models import Count
-from .forms import NewUserForm
+from django.contrib.auth import login
 
 from blogapp.models import Post, Comment, Tag, Profile, WebsiteMeta
 
@@ -116,5 +116,12 @@ def about(request):
 
 def register_user(request):
     form = NewUserForm()
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("/")
+
     context = {'form': form}
     return render(request, 'registration/registration.html', context)
