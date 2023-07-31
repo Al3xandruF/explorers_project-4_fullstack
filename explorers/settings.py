@@ -40,7 +40,6 @@ CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu1
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -49,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'blogapp',
+    'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
