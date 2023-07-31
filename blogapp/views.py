@@ -111,3 +111,8 @@ def about(request):
         website_info = WebsiteMeta.objects.all()[0]
     context = {'website_info': website_info}
     return render(request, 'app/about.html', context)
+
+
+def register_user(request):
+    context = {}
+    return render(request, 'registration/registration.html', context)
