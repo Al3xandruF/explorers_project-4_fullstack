@@ -106,6 +106,7 @@
                           {{comment.content}}
                         </p>
                       </div>
+                      {% if user.is_authenticated %}
                       <div class="reply">
                         <button onclick="toggleDiv(this)">Reply</button>
                       </div>
@@ -125,11 +126,11 @@
                             {{form.email}}
                             {{form.website}}
                           </div>
-
                           <button class="btn btn-primary rounded">
                             Post Reply
                           </button>
                         </form>
+                        {% endif %}
                       </div>
                     </div>
 
@@ -158,6 +159,7 @@
               </div>
             </div>
             <div class="comment-box">
+              {% if user.is_authenticated %}
               <h3>Leave a new comment to this post</h3>
               <p>
                 Your email address will not be published. Required fields are
@@ -174,6 +176,7 @@
                 </div>
                 <button class="btn btn-primary rounded">Post comment</button>
               </form>
+              {% endif %}
             </div>
           </div>
         </section>
