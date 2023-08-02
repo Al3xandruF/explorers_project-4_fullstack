@@ -13,7 +13,7 @@
 }
 
 :root {
-    --red: #ff4b64;
+    --red: #A8602C;
     --black: #404040;
     --des: #555555;
     --shadow: #ffffff1a 0px 1px 1px 0px inset, #32325d40 0px 50px 100px -20px,
@@ -258,14 +258,14 @@ header .container {
     margin: 1rem 0;
 }
 
-.cetagory {
+.category {
     background: var(--red);
     width: fit-content;
     border-radius: 5rem;
     padding: 0.5rem 1rem;
 }
 
-.cetagory p {
+.category p {
     color: white;
     font-size: 1.2rem;
 }
