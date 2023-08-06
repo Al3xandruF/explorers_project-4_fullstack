@@ -9,5 +9,6 @@ urlpatterns = [
     path('search/', views.search_posts, name='search'),
     path('about/', views.about, name='about'),
     path('accounts/register/', views.register_user, name='register'),
-    #path('update_post/<int:pk>', views.update_post, name='update_post'),
+    path('update_post/<int:pk>', views.update_post, name='update_post'),
+    path('delete_post/<int:pk>', views.delete_post, name='delete_post'),
 ]

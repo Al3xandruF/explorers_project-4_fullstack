@@ -74,6 +74,22 @@ def post_page(request, slug):
     return render(request, 'app/post.html', context)
 
 
+def update_post(request, pk):
+    if request.user.is_authenticated:
+        current_post = Comment.objects.get(id=pk)
+        form = CommentForm(request.POST or None, instance=current_post)
+        if form.is_valid():
+            form.save()
+            return redirect(request, 'app/post.html', {'form': form})
+
+
+def delete_post(request, pk):
+    if request.user.is_authenticated:
+        delete_it = Comment.objects.get(id=pk)
+        delete_it.delete()
+        return redirect('app/post.html', {'form': form})
+
+
 def tag_page(request, slug):
     tag = Tag.objects.get(slug=slug)
 
