@@ -8,5 +8,6 @@ urlpatterns = [
     path('author/<slug:slug>', views.author_page, name='author_page'),
     path('search/', views.search_posts, name='search'),
     path('about/', views.about, name='about'),
-    path('accounts/register/', views.register_user, name='register')
+    path('accounts/register/', views.register_user, name='register'),
+    #path('update_post/<int:pk>', views.update_post, name='update_post'),
 ]

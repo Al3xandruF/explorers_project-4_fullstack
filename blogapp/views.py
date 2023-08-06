@@ -34,7 +34,8 @@ def index(request):
             subscribe_successful = 'Subscribed Successfully'
             subscribe_form = SubscribeForm()
 
-    context = {'posts': posts, 'top_posts': top_posts, 'website_info': website_info ,'recent_posts': recent_posts, 'subscribe_form': subscribe_form, 'subscribe_successful': subscribe_successful, 'featured_blog': featured_blog}
+    context = {'posts': posts, 'top_posts': top_posts, 'website_info': website_info, 'recent_posts': recent_posts,
+               'subscribe_form': subscribe_form, 'subscribe_successful': subscribe_successful, 'featured_blog': featured_blog}
     return render(request, 'app/index.html', context)
 
 
@@ -76,22 +77,29 @@ def post_page(request, slug):
 def tag_page(request, slug):
     tag = Tag.objects.get(slug=slug)
 
-    top_posts = Post.objects.filter(tags__in=[tag.id]).order_by('-view_count')[0:2]
-    recent_posts = Post.objects.filter(tags__in=[tag.id]).order_by('-last_updated')[0:2]
+    top_posts = Post.objects.filter(
+        tags__in=[tag.id]).order_by('-view_count')[0:2]
+    recent_posts = Post.objects.filter(
+        tags__in=[tag.id]).order_by('-last_updated')[0:2]
     tags = Tag.objects.all()
 
-    context = {'tag': tag, 'top_posts': top_posts, 'recent_posts': recent_posts, 'tags': tags}
+    context = {'tag': tag, 'top_posts': top_posts,
+               'recent_posts': recent_posts, 'tags': tags}
     return render(request, 'app/tag.html', context)
 
 
 def author_page(request, slug):
     profile = Profile.objects.get(slug=slug)
 
-    top_posts = Post.objects.filter(author=profile.user).order_by('-view_count')[0:2]
-    recent_posts = Post.objects.filter(author=profile.user).order_by('-last_updated')[0:2]
-    top_authors = User.objects.annotate(number=Count('post')).order_by('number')
+    top_posts = Post.objects.filter(
+        author=profile.user).order_by('-view_count')[0:2]
+    recent_posts = Post.objects.filter(
+        author=profile.user).order_by('-last_updated')[0:2]
+    top_authors = User.objects.annotate(
+        number=Count('post')).order_by('number')
 
-    context = {'profile': profile, 'top_posts': top_posts, 'recent_posts': recent_posts, 'top_authors': top_authors}
+    context = {'profile': profile, 'top_posts': top_posts,
+               'recent_posts': recent_posts, 'top_authors': top_authors}
     return render(request, 'app/author.html', context)
 
 
