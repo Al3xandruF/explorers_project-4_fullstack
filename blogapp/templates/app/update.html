@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}explorers | for the curious minds{% endblock title %}
+{% load static %}
+
+{% block content %}
+<form method="PUT">
+    {% csrf_token %}
+    {{form.content}}
+    <div class="grid-3">
+      <input type="hidden" name="post_id" value="{{form.pk}}">
+    </div>
+    <button class="btn btn-primary rounded">Post Update</button>
+  </form>
+{% endblock %}

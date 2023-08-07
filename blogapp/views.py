@@ -46,7 +46,7 @@ def post_page(request, slug):
 
     if request.POST:
         comment_form = CommentForm(request.POST)
-        if comment_form.is_valid:
+        if comment_form.is_valid and request.user.is_authenticated:
             parent_obj = None
             if request.POST.get('parent'):
                 parent = request.POST.get('parent')
@@ -80,8 +80,7 @@ def update_comment(request, pk):
         form = CommentForm(request.POST or None, instance=current_post)
         if form.is_valid():
             form.save()
-            return render(request, 'app/post.html', {'form': form})
-        return render(request, 'app/post.html', {'form': form})
+    return render(request, 'app/update.html', {'form': form})
 
 
 def delete_comment(request, pk):
