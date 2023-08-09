@@ -1,8 +1,5 @@
-{% extends 'base.html' %}
-{% block title %}explorers | for the curious minds{% endblock title %}
-{% load static %}
-
-{% block content%}
+{% extends 'base.html' %} {% block title %}explorers | for the curious minds
+{% endblock title %} {% load static %} {% block content%}
 <body>
   <div class="container">
     <div class="layout">
@@ -57,7 +54,9 @@
                 <p>{{post.content|safe}}</p>
                 <div class="blog-tags">
                   {% for tag in post.tags.all %}
-                  <a href="{% url 'tag_page' tag.slug %}" class="tag">{{tag.name}}</a>
+                  <a href="{% url 'tag_page' tag.slug %}" class="tag"
+                    >{{tag.name}}</a
+                  >
                   {% endfor %}
                 </div>
                 <div class="social-share">
@@ -102,9 +101,7 @@
                   <div class="comment-sec-main">
                     <div class="comment-sec">
                       <div class="comment">
-                        <p>
-                          {{comment.content}}
-                        </p>
+                        <p>{{comment.content}}</p>
                       </div>
                       {% if user.is_authenticated %}
                       <div class="reply">
@@ -117,14 +114,18 @@
                           fields are marked<span>*</span>
                         </p>
                         <form method="POST">
-                          {% csrf_token %}
-                          {{form.content}}
+                          {% csrf_token %} {{form.content}}
                           <div class="grid-3">
-                            <input type="hidden" name="post_id" value="{{post.id}}">
-                            <input type="hidden" name="parent" value="{{comment.id}}">
-                            {{form.name}}
-                            {{form.email}}
-                            {{form.website}}
+                            <input
+                              type="hidden"
+                              name="post_id"
+                              value="{{post.id}}"
+                            />
+                            <input
+                              type="hidden"
+                              name="parent"
+                              value="{{comment.id}}"
+                            />
                           </div>
                           <button class="btn btn-primary rounded">
                             Post Reply
@@ -146,21 +147,24 @@
                         </div>
                       </div>
                       <div class="comment">
-                        <p>
-                          {{reply.content}}
-                        </p>
+                        <p>{{reply.content}}</p>
                       </div>
                     </div>
                     {% endfor %}
                   </div>
                 </div>
-                <form action="{% url 'update_comment' comment.pk %}" method="POST">
+                <div>
+                  <a href="{% url 'update_comment' comment.id %}">Update</a>
+                <form
+                  action="{% url 'delete_comment' comment.pk %}"
+                  method="POST"
+                >
                   {% csrf_token %}
-                  <input class="btn btn-primary rounded" type="submit" value="Update">
-                </form>
-                <form action="{% url 'delete_comment' comment.pk %}" method="POST">
-                  {% csrf_token %}
-                  <input class="btn btn-primary rounded" type="submit" value="Delete">
+                  <input
+                    class="btn btn-primary rounded"
+                    type="submit"
+                    value="Delete"
+                  />
                 </form>
                 <!-- user comment end -->
                 {% endfor %}
@@ -174,13 +178,9 @@
                 marked<span>*</span>
               </p>
               <form method="POST">
-                {% csrf_token %}
-                {{form.content}}
+                {% csrf_token %} {{form.content}}
                 <div class="grid-3">
-                  <input type="hidden" name="post_id" value="{{post.id}}">
-                  {{form.name}}
-                  {{form.email}}
-                  {{form.website}}
+                  <input type="hidden" name="post_id" value="{{post.id}}" />
                 </div>
                 <button class="btn btn-primary rounded">Post comment</button>
               </form>
@@ -192,7 +192,6 @@
       <!-- left layout end -->
     </div>
   </div>
-  
 </body>
 
 {% endblock content%}

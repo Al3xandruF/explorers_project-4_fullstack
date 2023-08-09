@@ -59,11 +59,17 @@ def post_page(request, slug):
                     return HttpResponseRedirect(reverse('post_page', kwargs={'slug': slug}))
             else:
                 comment = comment_form.save(commit=False)
+                comment.author = request.user
                 postid = request.POST.get('post_id')
                 post = Post.objects.get(id=postid)
                 comment.post = post
                 comment.save()
                 return HttpResponseRedirect(reverse('post_page', kwargs={'slug': slug}))
+
+
+# comment = comment_form.save(commit=False)
+# comment.author = request.user
+# comment.save()
 
     if post.view_count is None:
         post.view_count = 1
@@ -82,6 +88,10 @@ def update_comment(request, pk):
             form.save()
     return render(request, 'app/update.html', {'form': form})
 
+
+#comment = comment_form.save(commit=False)
+#comment.author = request.user
+#comment.save()
 
 def delete_comment(request, pk):
     if request.user.is_authenticated:

@@ -9,6 +9,6 @@ urlpatterns = [
     path('search/', views.search_posts, name='search'),
     path('about/', views.about, name='about'),
     path('accounts/register/', views.register_user, name='register'),
-    path('update_comment/<int:pk>', views.update_comment, name='update_comment'),
+    path('update_comment/<int:pk>/', views.update_comment, name='update_comment'),
     path('delete_comment/<int:pk>', views.delete_comment, name='delete_comment'),
 ]
