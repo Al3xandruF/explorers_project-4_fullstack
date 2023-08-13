@@ -12,5 +12,6 @@ urlpatterns = [
     path('update_comment/<int:pk>/', views.update_comment, name='update_comment'),
     path('delete_comment/<int:pk>', views.delete_comment, name='delete_comment'),
     path('bookmark_post/<slug:slug>', views.bookmark_post, name='bookmark_post'),
-    path('like_post/<slug:slug>', views.like_post, name='like_post')
+    path('like_post/<slug:slug>', views.like_post, name='like_post'),
+    path('all_bookmarked_posts/', views.all_bookmarked_posts, name='all_bookmarked_posts')
 ]

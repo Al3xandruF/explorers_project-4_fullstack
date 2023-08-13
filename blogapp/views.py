@@ -59,10 +59,6 @@ def post_page(request, slug):
 
     if request.POST:
         comment_form = CommentForm(request.POST)
-        print("FORM ERROR::::::::::::::::::::::::::::::::")
-        print(comment_form.errors)
-        print("FORM ERROR::::::::::::::::::::::::::::::::")
-
         if comment_form.is_valid and request.user.is_authenticated:
             parent_obj = None
             if request.POST.get('parent'):
@@ -191,3 +187,9 @@ def like_post(request, slug):
     else:
         post.likes.add(request.user)
     return HttpResponseRedirect(reverse('post_page', args=[str(slug)]))
+
+
+def all_bookmarked_posts(request):
+    all_bookmarked_posts = Post.objects.filter(bookmarks=request.user)
+    context = {'all_bookmarked_posts': all_bookmarked_posts}
+    return render(request, 'app/all_bookmarked_posts.html', context)

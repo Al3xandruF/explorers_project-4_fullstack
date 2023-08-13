@@ -1,0 +1,24 @@
+                   List of relations
+ Schema |            Name            | Type  |  Owner   
+--------+----------------------------+-------+----------
+ public | auth_group                 | table | jmyvczoq
+ public | auth_group_permissions     | table | jmyvczoq
+ public | auth_permission            | table | jmyvczoq
+ public | auth_user                  | table | jmyvczoq
+ public | auth_user_groups           | table | jmyvczoq
+ public | auth_user_user_permissions | table | jmyvczoq
+ public | blogapp_comment            | table | jmyvczoq
+ public | blogapp_post               | table | jmyvczoq
+ public | blogapp_post_bookmarks     | table | jmyvczoq
+ public | blogapp_post_likes         | table | jmyvczoq
+ public | blogapp_post_tags          | table | jmyvczoq
+ public | blogapp_profile            | table | jmyvczoq
+ public | blogapp_subscribe          | table | jmyvczoq
+ public | blogapp_tag                | table | jmyvczoq
+ public | blogapp_websitemeta        | table | jmyvczoq
+ public | django_admin_log           | table | jmyvczoq
+ public | django_content_type        | table | jmyvczoq
+ public | django_migrations          | table | jmyvczoq
+ public | django_session             | table | jmyvczoq
+(19 rows)
+
