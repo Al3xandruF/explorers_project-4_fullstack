@@ -11,4 +11,5 @@ urlpatterns = [
     path('accounts/register/', views.register_user, name='register'),
     path('update_comment/<int:pk>/', views.update_comment, name='update_comment'),
     path('delete_comment/<int:pk>', views.delete_comment, name='delete_comment'),
+    path('bookmark_post/<slug:slug>', views.bookmark_post, name='bookmark_post')
 ]
