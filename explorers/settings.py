@@ -32,9 +32,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['explorers-4th-project-fs-17cd58235910.herokuapp.com', 'localhost']
-ALLOWED_HOSTS = ['8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu103.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu102.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu103.gitpod.io']
 
 
 # Application definition

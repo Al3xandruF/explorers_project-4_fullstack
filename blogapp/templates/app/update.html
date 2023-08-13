@@ -1,19 +1,15 @@
-{% extends 'base.html' %} {% block title %}explorers | for the curious minds
-{% endblock title %} {% load static %} {% block content %}
-
-<form method="POST">
-  {% csrf_token %}
-  {{form}}
-  <div class="user-comment">
-    <div class="author">
-      <div class="profile-pic">
-        <img src="{% static 'images/author.svg' %}" alt="" />
+{% extends 'base.html' %} {% block title %}explorers | for the curious minds {% endblock title %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="comment-box">
+    <form method="POST">
+      {% csrf_token %} {{form.content}}
+      <div class="grid-3">
+        <input type="hidden" name="post_id" value="{{post.id}}" />
       </div>
-      <div class="details">
-        <p>{{comment.name}}</p>
-        <small>{{comment.date|date}}</small>
-      </div>
-    </div>
-  <button class="btn btn-primary rounded" type="submit" value="Update">Post Update</button>
-</form>
+      <button class="btn btn-primary rounded">Post Update</button>
+    </form>
+  </div>
+</div>
 {% endblock %}

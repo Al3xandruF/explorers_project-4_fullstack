@@ -46,6 +46,10 @@ def post_page(request, slug):
 
     if request.POST:
         comment_form = CommentForm(request.POST)
+        print("FORM ERROR::::::::::::::::::::::::::::::::")
+        print(comment_form.errors)
+        print("FORM ERROR::::::::::::::::::::::::::::::::")
+
         if comment_form.is_valid and request.user.is_authenticated:
             parent_obj = None
             if request.POST.get('parent'):
@@ -58,18 +62,14 @@ def post_page(request, slug):
                     comment_reply.save()
                     return HttpResponseRedirect(reverse('post_page', kwargs={'slug': slug}))
             else:
-                comment = comment_form.save(commit=False)
-                comment.author = request.user
-                postid = request.POST.get('post_id')
-                post = Post.objects.get(id=postid)
-                comment.post = post
-                comment.save()
-                return HttpResponseRedirect(reverse('post_page', kwargs={'slug': slug}))
-
-
-# comment = comment_form.save(commit=False)
-# comment.author = request.user
-# comment.save()
+                if comment_form.is_valid:
+                    comment = comment_form.save(commit=False)
+                    comment.author = request.user
+                    postid = request.POST.get('post_id')
+                    post = Post.objects.get(id=postid)
+                    comment.post = post
+                    comment.save()
+                    return HttpResponseRedirect(reverse('post_page', kwargs={'slug': slug}))
 
     if post.view_count is None:
         post.view_count = 1
@@ -86,18 +86,16 @@ def update_comment(request, pk):
         form = CommentForm(request.POST or None, instance=current_post)
         if form.is_valid():
             form.save()
+            return HttpResponseRedirect(reverse('post_page', kwargs={'slug': current_post.post.slug}))
     return render(request, 'app/update.html', {'form': form})
 
-
-#comment = comment_form.save(commit=False)
-#comment.author = request.user
-#comment.save()
 
 def delete_comment(request, pk):
     if request.user.is_authenticated:
         delete_it = Comment.objects.get(id=pk)
+        post_slug = delete_it.post.slug
         delete_it.delete()
-        return render(request, 'app/post.html', {'form': form})
+        return HttpResponseRedirect(reverse('post_page', kwargs={'slug': post_slug}))
 
 
 def tag_page(request, slug):

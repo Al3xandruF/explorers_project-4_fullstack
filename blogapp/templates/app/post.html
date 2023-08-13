@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block title %}explorers | for the curious minds
-{% endblock title %} {% load static %} {% block content%}
+{% extends 'base.html' %} {% block title %}explorers | for the curious minds {% endblock title %}
+{% load static %}
+{% block content%}
 <body>
   <div class="container">
     <div class="layout">
@@ -153,8 +154,18 @@
                     {% endfor %}
                   </div>
                 </div>
-                <div>
-                  <a href="{% url 'update_comment' comment.id %}">Update</a>
+                {% if user.is_authenticated and user == comment.author %}
+                <form
+                  action="{% url 'update_comment' comment.pk %}"
+                  method="POST"
+                >
+                  {% csrf_token %}
+                  <input
+                    class="btn btn-primary rounded"
+                    type="submit"
+                    value="Update"
+                  />
+                </form>
                 <form
                   action="{% url 'delete_comment' comment.pk %}"
                   method="POST"
@@ -166,6 +177,7 @@
                     value="Delete"
                   />
                 </form>
+                {% endif %}
                 <!-- user comment end -->
                 {% endfor %}
               </div>
