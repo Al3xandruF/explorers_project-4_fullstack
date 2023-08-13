@@ -44,11 +44,17 @@ def post_page(request, slug):
     comments = Comment.objects.filter(post=post, parent=None)
     form = CommentForm()
 
-    # Bookmark logic
+    # Bookmark Logic
     bookmarked = False
     if post.bookmarks.filter(id=request.user.id).exists():
         bookmarked = True
     is_bookmarked = bookmarked
+
+    # Liked Logic
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        liked = True
+    post_is_liked = liked
 
     if request.POST:
         comment_form = CommentForm(request.POST)
@@ -82,7 +88,7 @@ def post_page(request, slug):
     else:
         post.view_count = post.view_count + 1
     post.save()
-    context = {'post': post, 'form': form, 'comments': comments, 'is_bookmarked': is_bookmarked}
+    context = {'post': post, 'form': form, 'comments': comments, 'is_bookmarked': is_bookmarked, 'post_is_liked': post_is_liked}
     return render(request, 'app/post.html', context)
 
 
