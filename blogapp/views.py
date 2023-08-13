@@ -173,3 +173,13 @@ def bookmark_post(request, slug):
     else:
         post.bookmarks.add(request.user)
     return HttpResponseRedirect(reverse('post_page', args=[str(slug)]))
+
+
+def like_post(request, slug):
+    print("PRINT", request.POST.get('post_id'))
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post_page', args=[str(slug)]))
