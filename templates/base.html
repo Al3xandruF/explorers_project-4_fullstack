@@ -75,6 +75,12 @@
               <a href="{% url 'all_liked_posts' %}">Likes</a>
               <a href="{% url 'all_bookmarked_posts' %}">Bookmarks</a>
             </div>
+            {% else %}
+            <h2>Explorers | Register</h2>
+            <div class="q-link">
+              <a href="{% url 'login' %}">Login</a>
+              <a href="{% url 'register' %}">Register</a>
+            </div>
             {% endif %}
           </div>
           <div class="news-signup">
