@@ -59,6 +59,9 @@ def post_page(request, slug):
 
     if request.POST:
         comment_form = CommentForm(request.POST)
+
+    if request.POST:
+        comment_form = CommentForm(request.POST)
         if comment_form.is_valid and request.user.is_authenticated:
             parent_obj = None
             if request.POST.get('parent'):
