@@ -69,6 +69,7 @@ def post_page(request, slug):
                 parent_obj = Comment.objects.get(id=parent)
                 if parent_obj:
                     comment_reply = comment_form.save(commit=False)
+                    comment_reply.author = request.user
                     comment_reply.parent = parent_obj
                     comment_reply.post = post
                     comment_reply.save()

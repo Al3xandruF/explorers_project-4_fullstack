@@ -129,7 +129,7 @@
                       <img src="{% static 'images/author.svg' %}" alt="" />
                     </div>
                     <div class="details">
-                      <p>{{comment.name}}</p>
+                      <p>{{comment.author.username}}</p>
                       <small>{{comment.date|date}}</small>
                     </div>
                   </div>
@@ -177,7 +177,7 @@
                           <img src="{% static 'images/author.svg' %}" alt="" />
                         </div>
                         <div class="details">
-                          <p>{{reply.name}}</p>
+                          <p>{{reply.author.username}}</p>
                           <small>{{reply.date|date}}</small>
                         </div>
                       </div>
@@ -189,28 +189,12 @@
                   </div>
                 </div>
                 {% if user.is_authenticated and user == comment.author %}
-                <form
-                  action="{% url 'update_comment' comment.pk %}"
-                  method="POST"
-                >
-                  {% csrf_token %}
-                  <input
-                    class="btn btn-primary rounded"
-                    type="submit"
-                    value="Update"
-                  />
-                </form>
-                <form
-                  action="{% url 'delete_comment' comment.pk %}"
-                  method="POST"
-                >
-                  {% csrf_token %}
-                  <input
-                    class="btn btn-primary rounded"
-                    type="submit"
-                    value="Delete"
-                  />
-                </form>
+                <a href="{% url 'update_comment' comment.pk %}">
+                  Update
+                </a>
+                <a href="{% url 'delete_comment' comment.pk %}" method="POST">
+                  Delete
+                </a>
                 {% endif %}
                 <!-- user comment end -->
                 {% endfor %}
