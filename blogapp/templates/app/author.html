@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block title %}explorers | {{profile.user.first_name}}{% endblock title %}
+{% extends 'base.html' %} {% block title %}explorers | {{profile.user.first_name}}{% endblock title %}
 {% block content %}
 <div class="container">
   <div class="layout">
@@ -24,6 +23,7 @@
           <h1 class="sec-title">Top posts</h1>
           <div class="grid-2 blog">
             {% for post in top_posts %}
+            <!-- card -->
             <a href="{% url 'post_page' post.slug %}">
               <div class="card">
                 <div class="post-img">
@@ -59,6 +59,7 @@
           <h1 class="sec-title">Recent Posts</h1>
           <div class="grid-3 blog-grid">
             {% for post in recent_posts %}
+            <!-- card -->
             <a href="{% url 'post_page' post.slug %}">
               <div class="card">
                 <div class="post-img">
@@ -106,11 +107,9 @@
             <img src="{{author.profile.profile_image.url}}" alt="" />
           </div>
           <div class="recent-content">
-            <h3>
-                {{author.first_name}}
-            </h3>
+            <h3>{{author.first_name}}</h3>
             <a class="learn" href="{% url 'author_page' author.profile.slug %}">
-                Learn more<span class="material-icons"> trending_flat </span>
+              Learn more<span class="material-icons"> trending_flat </span>
             </a>
           </div>
         </div>

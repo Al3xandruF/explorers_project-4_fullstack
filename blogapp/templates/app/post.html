@@ -33,9 +33,12 @@
               </div>
               <div class="track">
                 {% if user.is_authenticated %}
-                <form action="{% url 'bookmark_post' post.slug %}" method="POST">
+                <form
+                  action="{% url 'bookmark_post' post.slug %}"
+                  method="POST"
+                >
                   {% csrf_token %}
-                  <input type="hidden" name="post_id" value="{{post.id}}">
+                  <input type="hidden" name="post_id" value="{{post.id}}" />
                   {% if is_bookmarked %}
                   <button type="submit" class="btn btn-info">
                     <i class="fa-solid fa-bookmark"></i>
@@ -53,7 +56,7 @@
                   <i class="uil uil-bookmark-full"></i>
                   <p class="bookmark">Bookmark</p>
                 </a>
-                <br>
+                <br />
                 {% endif %}
               </div>
             </div>
@@ -79,24 +82,34 @@
                   <div class="reactions">
                     <div class="likes">
                       {% if user.is_authenticated %}
-                      <form action="{% url 'like_post' post.slug %}" method="post">
-                      {% csrf_token %}
-                      <input type="hidden" name="post_id" value="{{post.id}}">
-                      {% if post_is_liked %}
+                      <form
+                        action="{% url 'like_post' post.slug %}"
+                        method="post"
+                      >
+                        {% csrf_token %}
+                        <input
+                          type="hidden"
+                          name="post_id"
+                          value="{{post.id}}"
+                        />
+                        {% if post_is_liked %}
                         <button type="submit">
-                          <i class="fa-solid fa-heart"></i> <span>{{number_of_likes}}</span>
+                          <i class="fa-solid fa-heart"></i>
+                          <span>{{number_of_likes}}</span>
                         </button>
                         {% else %}
                         <button type="submit">
-                          <i class="uil uil-heart"></i> <span>{{number_of_likes}}</span>
+                          <i class="uil uil-heart"></i>
+                          <span>{{number_of_likes}}</span>
                         </button>
                         {% endif %}
                       </form>
                       {% else %}
-                <a class="track" href="{% url 'login' %}">
-                  <i class="uil uil-heart"></i> <span>{{number_of_likes}}</span>
-                </a>
-                <br>
+                      <a class="track" href="{% url 'login' %}">
+                        <i class="uil uil-heart"></i>
+                        <span>{{number_of_likes}}</span>
+                      </a>
+                      <br />
                       {% endif %}
                     </div>
                     <div class="total-comments">
@@ -189,12 +202,8 @@
                   </div>
                 </div>
                 {% if user.is_authenticated and user == comment.author %}
-                <a href="{% url 'update_comment' comment.pk %}">
-                  Update
-                </a>
-                <a href="{% url 'delete_comment' comment.pk %}" method="POST">
-                  Delete
-                </a>
+                <a href="{% url 'update_comment' comment.pk %}">Edit |</a>
+                <a href="{% url 'delete_comment' comment.pk %}">Delete</a>
                 {% endif %}
                 <!-- user comment end -->
                 {% endfor %}
