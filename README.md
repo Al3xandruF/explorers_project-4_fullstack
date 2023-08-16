@@ -1,7 +1,7 @@
 # e x p l o r e r s _
 
 
-Immerse youself in a world of curiosity, facts, truthness...exploration. Explorers(link to be attached) is a place of knowledge, a place for the curious minds where the information is well researched before being presented to the users.
+Start diving in a world of curiosity, facts, truthness...exploration. Explorers(link to be attached) is a place of knowledge, a place for the curious minds where the information is well researched before being presented to the users.
 
 AM I RESPONSIVE GOES HERE
 
@@ -19,7 +19,6 @@ AM I RESPONSIVE GOES HERE
 * [Admin user](#admin-user)
 ### [Design](#design-1)
 * [Color Scheme](#color-scheme)
-* [Cabin Images](#cabin-images)
 * [Wireframes](#wireframes)
 * [Data Model](#data-models)
 * [User Journey](#user-journey)
@@ -45,14 +44,24 @@ AM I RESPONSIVE GOES HERE
 * [Acknowledgments](#acknowledgments)
 ---
 
-### **User Experience (UX)**
----
+## **User Experience (UX)**
 
+The website offers a friendly and captivating experience to its users throughout the clean layout of the pages, high quality photos and of course the content itself. Depending on how much the users want to engage, they have two options:
 
+1. If they want to become members, they have the possibility of registering and by doing so, they can take advantage of the full CRUD functionality the website has to offer. Besides this, they can subscribe, like the content they enjoy most and bookmark posts which they can later read, resulting in dedicated pages created. This way the users are keeping track of their activity on the website for better content management.
+2. If visitors of the website choose not to become members, they can still browse thru the content the same way as the registered users but with the option to subscribe only for newly added posts.
 
+### **Project Goals**
 
+- e x p l o r e r s _ - is a platform which has the mission to present to its users an educative, precise, well researched content about ancient civilizations and their contribution in the field of astronomy.
 
+### **Agile Methodology**
 
+Github Projects was used for applying the agile methodology:
+- Issues were created and User Stories added.
+- Project Board with Todo/ In Progress/ and Done columns was created to keep track of progress.
+
+ 
 
 
 
