@@ -19,6 +19,9 @@ AM I RESPONSIVE GOES HERE
 * [Admin user](#admin-user)
 ### [Design](#design-1)
 * [Color Scheme](#color-scheme)
+* [Images](#images)
+* [Favicon](#favicon)
+* [Typography](#typography)
 * [Wireframes](#wireframes)
 * [Data Model](#data-models)
 * [User Journey](#user-journey)
@@ -101,7 +104,7 @@ Have a detailed look [here](https://github.com/users/Al3xandruF/projects/7)
 
 ## **Design**
 
-The color useed throughout the pages is a monochromatic brown which is inspired by the earth itself. The tool used was Adobe - Color Wheel.
+The color used throughout the pages is a monochromatic brown which is inspired by the earth itself. The tool used was Adobe - Color Wheel.
 <details>
 <summary> Color Theme
 </summary>
@@ -112,7 +115,22 @@ The color useed throughout the pages is a monochromatic brown which is inspired 
 
 ### **Images**
 
-All images were downloaded as a free license from [Adobe Stock](https://stock.adobe.com/uk/contributor/201212133/login).
+- All images were downloaded as a free license from [Adobe Stock](https://stock.adobe.com/uk/contributor/201212133/login).
+
+### **Favicon**
+
+- Adobe Stock and Favicon.io were used to generate the favicon icon.
+<details>
+<summary> Favicon
+</summary>
+
+![Favicon](static/favicon/favicon.ico)
+</details>
+<br>
+
+### **Typography**
+
+- Googleapis was used for generating the material family fonts throughout the pages.
 
 
 
