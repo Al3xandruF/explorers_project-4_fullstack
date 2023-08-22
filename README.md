@@ -101,4 +101,20 @@ Have a detailed look [here](https://github.com/users/Al3xandruF/projects/7)
 
 ## **Design**
 
+The color useed throughout the pages is a monochromatic brown which is inspired by the earth itself. The tool used was Adobe - Color Wheel.
+<details>
+<summary> Color Theme
+</summary>
+
+![Color Scheme](readme_screenshots/color_scheme.png)
+</details>
+<br>
+
+### **Images**
+
+All images were downloaded as a free license from [Adobe Stock](https://stock.adobe.com/uk/contributor/201212133/login).
+
+
+
+
 
