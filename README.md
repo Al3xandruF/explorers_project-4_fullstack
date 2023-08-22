@@ -42,7 +42,7 @@ AM I RESPONSIVE GOES HERE
 * [Docs](#docs)
 * [Content](#content)
 * [Acknowledgments](#acknowledgments)
----
+<hr>
 
 ## **User Experience (UX)**
 
@@ -60,8 +60,45 @@ The website offers a friendly and captivating experience to its users throughout
 Github Projects was used for applying the agile methodology:
 - Issues were created and User Stories added.
 - Project Board with Todo/ In Progress/ and Done columns was created to keep track of progress.
+<details>
+<summary> Github Projects
+</summary>
 
- 
+![Project Board](readme_screenshots/github_projects.png)
+</details>
+<br>
 
+Have a detailed look [here](https://github.com/users/Al3xandruF/projects/7)
+
+ ### **Target Audience**
+
+ - Individuals interested on how our ancestors first approached astronomy and motion of celestial objects.
+ - People looking for deeper answers in the fields of astronomy, formation and development of the universe.
+ - Seekers of ancient myths and how our ancestors mixed science with mytholody.
+
+### **First Time User**
+
+- A clean page layout for easy navigation on then website.
+- Appealing graphics and story blogs for keeping the users engaged.
+- Easy subscribe and registration process.
+
+### **Registered User**
+
+- Easy and secure Login process for registered users.
+- Being able to still subscribe if this was omitted before registration.
+- CRUD functionality for comments/replies/edit/delete their comments on the owner's website posts.
+- Personalised Likes/Bookmarks pages created after the user liked/bookmarked the content he/she is interested about.
+
+### **Admin User**
+
+- Separate and secured login page for the owner/admin of the web app.
+- Access to an admin dashboard for full controll of the website's content.
+- Ability to add, edit or delete posts on the web app.
+- Being able to read, update and delete other user's posts for blog content management.
+- Tagging posts and adding them on the dedicated tags page.
+- Ability to delete user accounts for necessary control on managing user data and accounts.
+<hr>
+
+## **Design**
 
 
