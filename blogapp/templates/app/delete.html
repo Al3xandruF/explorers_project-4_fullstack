@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %}explorers | for the curious minds {% endblock title %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="comment-box">
+    <form method="POST">
+        <p>Are you sure you want to delete this comment ?</p>
+        {% csrf_token%} {{form.content}}
+      <div class="grid-3">
+        <input type="hidden" name="post_id" value="{{post.id}}" />
+      </div>
+      <button class="btn btn-primary rounded">Cancel</button>
+      <button class="btn btn-primary rounded">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

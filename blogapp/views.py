@@ -106,10 +106,21 @@ def update_comment(request, pk):
 
 def delete_comment(request, pk):
     if request.user.is_authenticated:
-        delete_it = Comment.objects.get(id=pk)
-        post_slug = delete_it.post.slug
-        delete_it.delete()
-        return HttpResponseRedirect(reverse('post_page', kwargs={'slug': post_slug}))
+        current_post = Comment.objects.get(id=pk)
+        form = CommentForm(request.POST or None, instance=current_post)
+        if form.is_valid():
+            current_post.delete()
+            return HttpResponseRedirect(reverse('post_page', kwargs={'slug': current_post.post.slug}))
+    return render(request, 'app/delete.html', {'form': form})
+
+
+# def delete_comment(request, pk):
+#     if request.user.is_authenticated:
+#         delete_it = Comment.objects.get(id=pk)
+#         form = CommentForm(request.POST or None, instance=delete_it)
+#         post_slug = delete_it.post.slug
+#         delete_it.delete()
+#         return HttpResponseRedirect(reverse('post_page', kwargs={'slug': post_slug}))
 
 
 def tag_page(request, slug):
