@@ -176,7 +176,7 @@
                               value="{{comment.id}}"
                             />
                           </div>
-                          <button class="btn btn-primary rounded">
+                          <button class="btn-like">
                             Post Reply
                           </button>
                         </form>
@@ -200,12 +200,13 @@
                       </div>
                     </div>
                     {% endfor %}
+                    {% if user.is_authenticated and user == comment.author %}
+                    <a href="{% url 'update_comment' comment.pk %}" class="btn-like">Update</a>
+                    <a href="{% url 'delete_comment' comment.pk %}" class="btn-like">Delete</a>
+                    {% endif %}
                   </div>
                 </div>
-                {% if user.is_authenticated and user == comment.author %}
-                <a href="{% url 'update_comment' comment.pk %}">Edit |</a>
-                <a href="{% url 'delete_comment' comment.pk %}">Delete</a>
-                {% endif %}
+                
                 <!-- user comment end -->
                 {% endfor %}
               </div>

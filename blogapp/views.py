@@ -111,9 +111,10 @@ def delete_comment(request, pk):
         if form.is_valid():
             current_post.delete()
             return HttpResponseRedirect(reverse('post_page', kwargs={'slug': current_post.post.slug}))
-    return render(request, 'app/delete.html', {'form': form})
+    return render(request, 'app/delete.html', {'form': form, 'post': current_post.post})
 
 
+# -DELETE func for future implementation.-
 # def delete_comment(request, pk):
 #     if request.user.is_authenticated:
 #         delete_it = Comment.objects.get(id=pk)
