@@ -21,6 +21,12 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
+# Closes the session when user closes the browser
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Session expires after a period of inactivity
+# SESSION_COOKIE_AGE = True
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/

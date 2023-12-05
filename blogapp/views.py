@@ -43,6 +43,7 @@ def post_page(request, slug):
     post = Post.objects.get(slug=slug)
     comments = Comment.objects.filter(post=post, parent=None)
     form = CommentForm()
+    
 
     # Bookmark Logic
     bookmarked = False
@@ -84,11 +85,21 @@ def post_page(request, slug):
                     comment.save()
                     return HttpResponseRedirect(reverse('post_page', kwargs={'slug': slug}))
 
-    if post.view_count is None:
-        post.view_count = 1
+    # if post.view_count is None:
+    #     post.view_count = 1
+    # else:
+    #     post.view_count = post.view_count + 1
+    # post.save()
+    
+    
+    if request.session.get(f'view_count_{post.id}', False):
+        post.view_count=post.view_count+1
+        print('Count: ', post.view_count)
+        pass
     else:
-        post.view_count = post.view_count + 1
-    post.save()
+        post.view_count += 1
+        post.save()
+        request.session[f'view_count_{post.id}'] = True
     context = {'post': post, 'form': form, 'comments': comments, 'is_bookmarked': is_bookmarked,
                'post_is_liked': post_is_liked, 'number_of_likes': number_of_likes}
     return render(request, 'app/post.html', context)
