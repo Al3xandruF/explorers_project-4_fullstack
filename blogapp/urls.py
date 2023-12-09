@@ -1,5 +1,6 @@
-from django.urls import path
 from . import views
+from django.urls import path
+from .views import handler404
 
 urlpatterns = [
     path('', views.index, name="index"),
@@ -16,3 +17,4 @@ urlpatterns = [
     path('all_posts/', views.all_posts, name='all_posts'),
     path('all_liked_posts/', views.all_liked_posts, name='all_liked_posts')
 ]
+

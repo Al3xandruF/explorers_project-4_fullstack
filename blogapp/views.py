@@ -256,3 +256,10 @@ def all_liked_posts(request):
     all_liked_posts = Post.objects.filter(likes=request.user)
     context = {"all_liked_posts": all_liked_posts}
     return render(request, "app/all_liked_posts.html", context)
+
+
+def handler404(request, exception):
+    """
+    Function for 404 (Page Not Found) errors.
+    """
+    return render(request, '404.html', status=404)
