@@ -21,11 +21,15 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 # Closes the session when user closes the browser
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Session expires after a period of inactivity
-SESSION_COOKIE_AGE = True
+SESSION_COOKIE_AGE = 1209600
+SESSION_COOKIE_DOMAIN = None
+SESSION_COOKIE_PATH = '/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,9 +42,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['explorers-4th-project-fs-17cd58235910.herokuapp.com', 'localhost']  # noqa
-ALLOWED_HOSTS = ['8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu107.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu106.gitpod.io']  # noqa
+CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu107.gitpod.io']  # noqa
 
 
 # Application definition
@@ -65,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'explorers.urls'

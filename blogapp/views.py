@@ -148,9 +148,8 @@ def delete_comment(request, pk):
             current_post.delete()
             return HttpResponseRedirect(
                 reverse("post_page", kwargs={"slug": current_post.post.slug})
-            )
-    return render(request, "app/delete.html",
-                  {"form": form, "post": current_post.post})
+                )
+    return render(request, "app/delete.html", {"form": form, "post": current_post.post})  # noqa
 
 
 # -DELETE func for future implementation.-
