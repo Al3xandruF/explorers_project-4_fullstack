@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_image = models.ImageField(null=True, blank=True, upload_to="images/")
+    profile_image = models.ImageField(null=True, blank=True, upload_to="images/")  # noqa
     slug = models.SlugField(max_length=200, unique=True)
     bio = models.CharField(max_length=200)
 
@@ -49,12 +49,13 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, blank=True, related_name='post')
     view_count = models.IntegerField(null=True, blank=True)
     is_featured = models.BooleanField(default=False)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    bookmarks = models.ManyToManyField(User, related_name="bookmarks", default=None, blank=True)
-    likes = models.ManyToManyField(User, related_name="post_like", default=None, blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)  # noqa
+    bookmarks = models.ManyToManyField(User, related_name="bookmarks", default=None, blank=True)  # noqa
+    likes = models.ManyToManyField(User, related_name="post_like", default=None, blank=True)  # noqa
 
     def number_of_likes(self):
         return self.likes.count()
+
 
 class Comment(models.Model):
     content = models.TextField()
@@ -63,8 +64,8 @@ class Comment(models.Model):
     email = models.EmailField(max_length=200)
     website = models.CharField(max_length=200)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)  # noqa
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')  # noqa
 
 
 class WebsiteMeta(models.Model):

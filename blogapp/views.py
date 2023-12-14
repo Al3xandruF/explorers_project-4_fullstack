@@ -97,7 +97,8 @@ def post_page(request, slug):
                         reverse("post_page", kwargs={"slug": slug})
                     )
 
-    # Logic in progress for view_count to increment only on refresh or re-visiting the page
+    # Logic in progress for view_count to increment only on refresh
+    # or re-visiting the page
     # Increment view count only for GET requests
     # if request.method == 'GET':
     #     if post.view_count is None:
@@ -148,7 +149,8 @@ def delete_comment(request, pk):
             return HttpResponseRedirect(
                 reverse("post_page", kwargs={"slug": current_post.post.slug})
             )
-    return render(request, "app/delete.html", {"form": form, "post": current_post.post})
+    return render(request, "app/delete.html",
+                  {"form": form, "post": current_post.post})
 
 
 # -DELETE func for future implementation.-
@@ -158,15 +160,16 @@ def delete_comment(request, pk):
 #         form = CommentForm(request.POST or None, instance=delete_it)
 #         post_slug = delete_it.post.slug
 #         delete_it.delete()
-#         return HttpResponseRedirect(reverse('post_page', kwargs={'slug': post_slug}))
+#         return HttpResponseRedirect(reverse('post_page',
+#         kwargs={'slug': post_slug}))
 
 
 # Logic for tag page
 def tag_page(request, slug):
     tag = Tag.objects.get(slug=slug)
 
-    top_posts = Post.objects.filter(tags__in=[tag.id]).order_by("-view_count")[0:2]
-    recent_posts = Post.objects.filter(tags__in=[tag.id]).order_by("-last_updated")[0:2]
+    top_posts = Post.objects.filter(tags__in=[tag.id]).order_by("-view_count")[0:2]  # noqa
+    recent_posts = Post.objects.filter(tags__in=[tag.id]).order_by("-last_updated")[0:2]  # noqa
     tags = Tag.objects.all()
 
     context = {
@@ -183,11 +186,14 @@ def tag_page(request, slug):
 # def author_page(request, slug):
 #     profile = Profile.objects.get(slug=slug)
 
-#     top_posts = Post.objects.filter(author=profile.user).order_by("-view_count")[0:2]
-#     recent_posts = Post.objects.filter(author=profile.user).order_by("-last_updated")[
+#     top_posts = Post.objects.filter(author=profile.user)
+#     .order_by("-view_count")[0:2]
+#     recent_posts = Post.objects.filter(author=profile.user)
+#     .order_by("-last_updated")[
 #         0:2
 #     ]
-#     top_authors = User.objects.annotate(number=Count("post")).order_by("number")
+#     top_authors = User.objects.annotate(number=
+#     Count("post")).order_by("number")
 
 #     context = {
 #         "profile": profile,

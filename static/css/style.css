@@ -189,7 +189,7 @@ header .container {
 
 .s-active input {
   width: 30rem;
-  font-style: 1.6rem;
+  font-size: 1.6rem;
   height: calc(100% - 2px);
   display: block;
 }

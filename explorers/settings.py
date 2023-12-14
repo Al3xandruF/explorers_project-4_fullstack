@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Closes the session when user closes the browser
-# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Session expires after a period of inactivity
-# SESSION_COOKIE_AGE = True
+SESSION_COOKIE_AGE = True
 
 
 # Quick-start development settings - unsuitable for production
@@ -35,12 +35,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-# ALLOWED_HOSTS = ['explorers-4th-project-fs-17cd58235910.herokuapp.com', 'localhost']
+# ALLOWED_HOSTS = ['explorers-4th-project-fs-17cd58235910.herokuapp.com', 'localhost']  # noqa
 ALLOWED_HOSTS = ['8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu106.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu106.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu106.gitpod.io']  # noqa
 
 
 # Application definition
@@ -108,16 +108,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 
@@ -144,7 +144,7 @@ LOGIN_REDIRECT_URL = '/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  # noqa
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

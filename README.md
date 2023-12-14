@@ -62,7 +62,7 @@ The website offers a friendly and captivating experience to its users throughout
 
 Github Projects was used for applying the agile methodology:
 - Issues were created and User Stories added.
-- Project Board with Todo/ In Progress/ and Done columns was created to keep track of progress.
+- Project Board with Epics/ Todo/ In Progress/ and Done columns was created to keep track of progress.
 <details>
 <summary> Github Projects
 </summary>

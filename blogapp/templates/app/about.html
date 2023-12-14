@@ -1,25 +1,29 @@
-{% extends 'base.html' %}
-{% block title %}explorers | About{{profile.user.first_name}}{% endblock title %}
+{% extends 'base.html' %} 
+{% block title %}
+explorers | About
+{{profile.user.first_name}}
+{% endblock title %}
+
 {% block content %}
-        <div class="container">
-          <div class="page-top">
-            <div class="top flex">
-              <div class="page-name">
-                <!-- For future implementation -->
-                <!--<a href="" class="learn">
+
+<div class="container">
+  <div class="page-top">
+    <div class="top flex">
+      <div class="page-name">
+        <!-- For future implementation -->
+        <!--<a href="" class="learn">
                   <span class="material-icons"> keyboard_return </span> Go back
                 </a> -->
-                <h1>About</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      <section class="sp">
-        <div class="container">
-          <p>
-            {{website_info.about}}
-          </p>
-        </div>
-      </section>
-    </main>
+        <h1>About</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <section class="sp">
+    <div class="container">
+      <p>{{website_info.about}}</p>
+    </div>
+  </section>
+</div>
 {% endblock content %}
