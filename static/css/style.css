@@ -37,6 +37,7 @@ img {
   max-width: 1220px;
   margin: auto;
   padding: 0 10px;
+  padding-top: 100px;
 }
 
 .container-fluid {
