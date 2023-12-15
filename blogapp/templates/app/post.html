@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}explorers | for the curious minds{% endblock title %}
 {% load static %}
+
 {% block content %}
 <body>
   <div class="container">
@@ -11,14 +12,13 @@
           <div class="top flex">
             <div class="page-name">
               <!-- For future implementation -->
-                <!--<a href="" class="learn">
+              <!--<a href="" class="learn">
                   <span class="material-icons"> keyboard_return </span> Go back
                 </a> -->
               <h1>_for the curious minds</h1>
             </div>
           </div>
         </div>
-
         <div>
           <div class="typo">
             <h1 class="title blog-title">{{post.title}}</h1>
@@ -48,7 +48,7 @@
                   </button>
                   {% else %}
                   <button type="submit" class="btn btn-info">
-                    <i class="uil uil-bookmark-full"></i> 
+                    <i class="uil uil-bookmark-full"></i>
                     <p class="bookmark">Bookmark</p>
                   </button>
                   {% endif %}
@@ -177,9 +177,7 @@
                               value="{{comment.id}}"
                             />
                           </div>
-                          <button class="btn-like">
-                            Post Reply
-                          </button>
+                          <button class="btn-like">Post Reply</button>
                         </form>
                         {% endif %}
                       </div>
@@ -202,12 +200,20 @@
                     </div>
                     {% endfor %}
                     {% if user.is_authenticated and user == comment.author %}
-                    <a href="{% url 'update_comment' comment.pk %}" class="btn-like">Update</a>
-                    <a href="{% url 'delete_comment' comment.pk %}" class="btn-like">Delete</a>
+                    <a
+                      href="{% url 'update_comment' comment.pk %}"
+                      class="btn-like"
+                      >Update</a
+                    >
+                    <a
+                      href="{% url 'delete_comment' comment.pk %}"
+                      class="btn-like"
+                      >Delete</a
+                    >
                     {% endif %}
                   </div>
                 </div>
-                
+
                 <!-- user comment end -->
                 {% endfor %}
               </div>

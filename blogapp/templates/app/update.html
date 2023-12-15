@@ -1,12 +1,13 @@
 {% extends 'base.html' %} {% block title %} explorers | for the curious minds {% endblock title %}
 {% load static %}
+
 {% block content %}
 <div class="container">
   <div class="comment-box">
     <form method="POST">
       {% csrf_token %} {{form.content}}
       <div class="grid-3">
-        <input type="hidden" name="post_id" value="{{post.id}}" />
+        <input type="hidden" name="post_id" value="{{post.id}}">
       </div>
       <button class="btn btn-primary rounded">Post Update</button>
     </form>
