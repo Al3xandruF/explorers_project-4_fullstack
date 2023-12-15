@@ -9,7 +9,7 @@
       <p>Are you sure you want to delete this comment ?</p>
       {% csrf_token%} {{form.content}}
       <div class="grid-3">
-        <input type="hidden" name="post_id" value="{{post.id}}" />
+        <input type="hidden" name="post_id" value="{{post.id}}">
       </div>
       <a href="{% url 'post_page' post.slug %}" class="btn-like">Cancel</a>
       <button class="btn-like">Submit</button>

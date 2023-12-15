@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}explorers | All Posts{{profile.user.first_name}}{% endblock title %}
+{% block title %}explorers | Posts{{profile.user.first_name}}{% endblock title %}
 
 {% block content %}
   <div class="container">
@@ -10,13 +10,14 @@
           <!--<a href="" class="learn">
           <span class="material-icons"> keyboard_return </span> Go back
           </a> -->
-          <h1>All Posts</h1>
+          <h1>Posts</h1>
         </div>
       </div>
     </div>
   </div>
 <section class="sp">
   <div class="container">
+    <h2>“...the universe is not only stranger than we imagine, it is stranger than we can imagine.”</h2>
     <div class="blog-tags">
       {% for post in all_posts  %}
       <p class="tag">

@@ -596,7 +596,7 @@ footer .container {
 .timeline {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 4rem;
   width: fit-content;
   margin: auto;
   margin-top: 3rem;
@@ -604,7 +604,7 @@ footer .container {
 
 .track {
   display: flex;
-  align-items: center;
+  align-items: normal;
   gap: 0.5rem;
 }
 
