@@ -41,10 +41,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# Heroku Deployment
 ALLOWED_HOSTS = ['explorers-4th-project-fs-17cd58235910.herokuapp.com', 'localhost']  # noqa
-# ALLOWED_HOSTS = ['8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu107.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://explorers-4th-project-fs-17cd58235910.herokuapp.com']  # noqa
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu107.gitpod.io']  # noqa
+# Local Deployment
+# ALLOWED_HOSTS = ['8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu107.gitpod.io']
+# CSRF_TRUSTED_ORIGINS = ['https://8000-al3xandruf-explorerspro-puc895b1k7q.ws-eu107.gitpod.io']  # noqa
 
 
 # Application definition
