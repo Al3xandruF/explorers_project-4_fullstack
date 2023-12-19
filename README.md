@@ -3,9 +3,9 @@
 
 Start diving in a world of curiosity, facts, truthness...exploration. Explorers(link to be attached) is a place of knowledge, a place for the curious minds where the information is well researched before being presented to the users.
 
-AM I RESPONSIVE GOES HERE
+![Home Screen](/documentation/Responsiveness.png)
 
-[View EXPLORERS live website here] (heroku project link to be attached)
+[View EXPLORERS live website here]()
 
 
 
@@ -431,5 +431,5 @@ Database used for [e x p l o r e r s _](https://github.com/Al3xandruF/explorers_
 
 ### Aknowledgements
 
-* First, I would like to thank my partner and mother of our Daughter Maria-Franceksa Musat, for the time and patience she had with me, allowing me to work on my project.
+* First, I would like to thank my partner and mother of our Daughter Ceska, for the time and patience she had with me, allowing me to work on my project.
 * I would also like to thank CI's Tutors for their patience and efforts in helping me understand better the technologies, my mentor Mitko Bachvarov and the Slack community for their engagement and time to answer some of my questions.
