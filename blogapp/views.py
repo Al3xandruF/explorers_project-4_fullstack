@@ -115,6 +115,7 @@ def post_page(request, slug):
         post.view_count += 1
         post.save()
         request.session[f"view_count_{post.id}"] = True
+        
     context = {
         "post": post,
         "form": form,

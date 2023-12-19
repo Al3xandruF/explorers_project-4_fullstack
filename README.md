@@ -51,7 +51,7 @@ AM I RESPONSIVE GOES HERE
 
 The website offers a friendly and captivating experience to its users throughout the clean layout of the pages, high quality photos and of course the content itself. Depending on how much the users want to engage, they have two options:
 
-1. If they want to become members, they have the possibility of registering and by doing so, they can take advantage of the full CRUD functionality the website has to offer. Beside this, they can subscribe, like the content they enjoy most and bookmark posts which they can later read, resulting in dedicated pages created. This way the users are keeping track of their activity on the website for better content management.
+1. If they want to become members, they have the possibility of registering and by doing so, they can take advantage of the full CRUD functionality the website has to offer. Besides this, they can subscribe, like the content they enjoy most and bookmark posts which they can later read, resulting in dedicated pages created. This way the users are keeping track of their activity on the website for better content management.
 2. If visitors of the website choose not to become members, they can still browse through the content the same way as the registered users but with the option to subscribe only for newly added posts.
 
 ### **Project Goals**
