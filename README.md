@@ -329,7 +329,7 @@ More...
 ### Programs Used
 
 * [Github](https://github.com) - Storing my project(code) online.
-* [Gitpod](https://www.gitpod.io/) - Wrinting the code online.
+* [Gitpod](https://www.gitpod.io/) - Writing the code online.
 * [Heroku](https://www.heroku.com/) - Used as the cloud-based platform to deploy the site.
 * [Google Fonts](https://fonts.google.com/) - Import main font the website.
 * [Am I Responsive](https://ui.dev/amiresponsive) - Responsiveness on various devices. 
@@ -411,3 +411,25 @@ Database used for [e x p l o r e r s _](https://github.com/Al3xandruF/explorers_
 3. Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the GitHub repository is updated.
 4. Click 'Open App' to view the deployed live site.
 
+* Site is now LIVE.
+
+### Testing
+* Please see [TESTING.md] for all the relevant tests performed.
+
+### References
+## Docs
+
+* [Stack Overflow](https://stackoverflow.com)
+* [Code Institute](https://learn.codeinstitute.net/dashboard)
+* [Django docs](https://docs.djangoproject.com/en/5.0)
+* [Django.contrig.auth](https://docs.djangoproject.com/en/5.0/ref/contrib/auth/#:~:text=This%20is%20the%20default%20authentication,see%20Customizing%20Users%20and%20authentication).
+* [Google](https://www.google.com).
+
+### Content
+
+* The website application is momentarily fictitious and written by myself, the developer: Alexandru Florea.
+
+### Aknowledgements
+
+* First, I would like to thank my partner and mother of our Daughter Maria-Franceksa Musat, for the time and patience she had with me, allowing me to work on my project.
+* I would also like to thank CI's Tutors for their patience and efforts in helping me understand better the technologies, my mentor Mitko Bachvarov and the Slack community for their engagement and time to answer some of my questions.
