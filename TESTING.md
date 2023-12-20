@@ -14,9 +14,6 @@ Meticulous testing has been performed to ensure optimal and seamless functionali
 * [JavaScript Validation](#javascript-validation)
 * [Python](#python)
 ### [Lighthouse Report](#lighthouse-report-1)
-### [Bugs](#bugs-1)
-* [Resolved Bugs](#resolved-bugs)
-* [Unresolved Bugs](#unresolved-bug)
 ---
 
 ## Responsiveness Testing

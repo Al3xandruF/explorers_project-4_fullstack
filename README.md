@@ -1,11 +1,11 @@
 # e x p l o r e r s _
 
 
-Start diving in a world of curiosity, facts, truthness...exploration. Explorers(link to be attached) is a place of knowledge, a place for the curious minds where the information is well researched before being presented to the users.
+Start diving in a world of curiosity, facts, truthness...exploration. &nbsp; e x p l o r e r s _ &nbsp; is a place of knowledge, a place for the curious minds where the information is well researched before being presented to the users.
 
 ![Home Screen](/documentation/Responsiveness.png)
 
-[View EXPLORERS live website here]()
+[View &nbsp; e x p l o r e r s _ &nbsp; live website here](https://explorers-4th-project-fs-17cd58235910.herokuapp.com)
 
 
 
@@ -300,13 +300,15 @@ More...
     ![Input Errors](/documentation/readme_snippets/com_replies_w3c_val_error_input.png)
 
 * After searching online for the cause of these errors and without any real solution found at the time, I decided to contact CI tutors which they instructed me to record this on the ReadMe and the steps being taken.
-    * The cause for these errrors is how Django Syntax renders the html in my page source code.
+    * The cause for these errors is how Django Syntax renders the html in my page source code.
     * Platforms which I looked for a solution or a lead on trying to understand what exactly in Django syntax causes these errors: Stackoverflow, GeeksforGeeks, medium, freecodecamp etc.
     * This is still looked into and will update the app after submission results.
 
 * author.svg avatar throws a 404 in the console. In progress to be sorted...
 
 ![avatar 404 error](/documentation/readme_snippets/Avatar_404_Error.png)
+
+* #### To note that the existing Bugs don't affect the functionality/responsiveness of the application in any way. They just need to be addressed after the submission result.
 
 ## Technologies Used
 
@@ -343,18 +345,18 @@ More...
 
 ## Deployment and Local Development
 
-Live deployment: [e x p l o r e r s _](https://explorers-4th-project-fs-17cd58235910.herokuapp.com)
+Live deployment:&nbsp; [e x p l o r e r s _](https://explorers-4th-project-fs-17cd58235910.herokuapp.com)
 
 ### Local Development
 
 #### How to Fork
 1. Log in(or Sign Up) to Github
-2. Go to repository for this project [e x p l o r e r s _](https://github.com/Al3xandruF/explorers_project-4_fullstack)
+2. Go to repository for this project &nbsp;[e x p l o r e r s _](https://github.com/Al3xandruF/explorers_project-4_fullstack)
 3. Click the fork button in the top right corner.
 
 #### How to Clone
 1. Log in(or Sign Up) to Github
-2. Go to repository for this project [e x p l o r e r s _](https://github.com/Al3xandruF/explorers_project-4_fullstack)
+2. Go to repository for this project &nbsp;[e x p l o r e r s _](https://github.com/Al3xandruF/explorers_project-4_fullstack)
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type the following command in the terminal (after the git clone you will need to paste the link you copied in step 3 above)
@@ -362,7 +364,7 @@ Live deployment: [e x p l o r e r s _](https://explorers-4th-project-fs-17cd5823
 7. Install the packages from the requirements.txt file - run Command pip3 install -r requirements.txt.
 
 ### ElephantSQL Database
-Database used for [e x p l o r e r s _](https://github.com/Al3xandruF/explorers_project-4_fullstack) is [ElephantSQL](https://www.elephantsql.com) PostgreSQL Database.
+Database used for &nbsp;[e x p l o r e r s _](https://github.com/Al3xandruF/explorers_project-4_fullstack)&nbsp; is [ElephantSQL](https://www.elephantsql.com) PostgreSQL Database.
 
 1. Click Create New Instance to start a new database.
 2. Provide a name (this is commonly the name of the project).
@@ -414,7 +416,7 @@ Database used for [e x p l o r e r s _](https://github.com/Al3xandruF/explorers_
 * Site is now LIVE.
 
 ### Testing
-* Please see [TESTING.md] for all the relevant tests performed.
+* Please see [TESTING](TESTING.md) for all the relevant tests performed.
 
 ### References
 ## Docs
